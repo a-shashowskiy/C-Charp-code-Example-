@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Quick_Sort
 {
@@ -87,13 +84,27 @@ namespace Quick_Sort
         {
             char[] a = {'d','h','t','e','q','j','k','y','l','m' };
             int i;
-            int[] mas=new int[1000];
+            int[] mas=new int[100];
             RandomProportional randObj = new RandomProportional();
 
             Console.WriteLine("Первоначальный масив: ");
-            for (i = 0; i < a.Length;i++)
+            Console.WriteLine();
+            for (i = 0; i < a.Length;)
             {
-                Console.WriteLine(a[i]);
+                
+                    for (int j = 0; j < 5; j++)
+                    {
+                    if (i != a.Length)
+                    {
+                        Console.Write("| {0} |", a[i]);
+                        i++;
+                    }
+                    else break;
+                    }
+                    i++;
+                    Console.WriteLine();
+                
+
             }
 
             Console.WriteLine();
@@ -101,30 +112,63 @@ namespace Quick_Sort
             Quicksort.qsort(a);
             Console.WriteLine("Отсортированый масив: ");
 
-            for (i = 0; i < a.Length; i++)
+            for (i = 0; i < a.Length;)
             {
-                Console.WriteLine(a[i]);
+
+                for (int j = 0; j < 5; j++)
+                {
+                    if (i != a.Length)
+                    {
+                        Console.Write("| {0} |", a[i]);
+                        i++;
+                    }
+                    else break;
+                }
+                i++;
+                Console.WriteLine();
             }
-            //
+            //Иницыализация масива рандомными значениями
             for (i = 0; i < mas.Length; i++)
             {
                 mas[i] = randObj.Next();
             }
             //Вывод масива на екран
+            Console.WriteLine();
             Console.WriteLine("Первоначальный масив int: ");
-            for (i = 0; i < mas.Length; i++)
+            for (i = 0; i < mas.Length;)
             {
-                Console.Write("Член масива{"+i+"}= "+mas[i]);
+
+                for (int j = 0; j < 10; j++)
+                {
+                    if (i != mas.Length)
+                    {
+                        Console.Write("| {0} |", mas[i]);
+                        i++;
+                    }
+                    else break;
+                }
+                i++;
                 Console.WriteLine();
             }
             //Сортировка масива Int
             Quicksort.qsortI(mas);
 
             //Вывод масива на екран
+            Console.WriteLine();
             Console.WriteLine("Сортированый масив int: ");
-            for (i = 0; i < mas.Length; i++)
+            for (i = 0; i < mas.Length;)
             {
-                Console.Write("Член масива{" + i + "}= " + mas[i]);
+
+                for (int j = 0; j < 10; j++)
+                {
+                    if (i != mas.Length)
+                    {
+                        Console.Write("| {0} |", mas[i]);
+                        i++;
+                    }
+                    else break;
+                }
+                i++;
                 Console.WriteLine();
             }
             Console.ReadKey();
